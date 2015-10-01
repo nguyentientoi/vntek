@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<!-- HOME PAGE LAYOUT -->
+	<definition name="frontendHomeLayout" template="/html/jsp/page/layout/frontend/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/html/jsp/page/layout/frontend/header.jsp" />
+		<put-attribute name="nav" value="/html/jsp/page/layout/frontend/navigation.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/html/jsp/page/layout/frontend/footer.jsp" />
+	</definition>
+	
+	<!-- COMMON LAYOUT FRONTEND -->
+	<definition name="pageLayout" template="/html/jsp/page/layout/frontend/page_layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="nav" value="/html/jsp/page/layout/frontend/navigation.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/html/jsp/page/layout/frontend/footer.jsp" />
+	</definition>
+	
+	<!-- COMMON LAYOUT BACKEND -->
+	<definition name="backendLayout" template="/html/jsp/page/layout/backend/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/html/jsp/page/layout/backend/header.jsp" />
+		<put-attribute name="menu" value="/html/jsp/page/layout/backend/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/html/jsp/page/layout/backend/footer.jsp" />
+	</definition>
+	
+	<!-- BEGIN PAGE DEFINITION -->
+	<definition name="/welcome.tiles" extends="frontendHomeLayout">
+		<put-attribute name="title" value="Xin chào" />
+		<put-attribute name="body" value="/html/jsp/page/welcome/welcome_user.jsp" />
+	</definition>
+	
+	<definition name="createAccount.tiles" extends="pageLayout">
+		<put-attribute name="title" value="Đăng kí tài khoản" />
+		<put-attribute name="body" value="/html/jsp/page/register/create_account.jsp" />
+	</definition>
+	
+	<definition name="login.tiles" extends="pageLayout">
+		<put-attribute name="title" value="Đăng nhập" />
+		<put-attribute name="body" value="/html/jsp/page/login/login.jsp" />
+	</definition>
+</tiles-definitions>
