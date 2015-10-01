@@ -21,5 +21,6 @@
     <module>sercurity</module>
     <module>utils</module>
     <module>services</module>
+    <module>logistics</module>
   </modules>
 </project>
