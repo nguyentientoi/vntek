@@ -115,12 +115,20 @@
     <dependency>
     	<groupId>com.vntek</groupId>
     	<artifactId>core</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
+    	<version>${vntek.version}</version>
+    	<scope>runtime</scope>
     </dependency>
     <dependency>
     	<groupId>com.vntek</groupId>
     	<artifactId>utils</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
+    	<version>${vntek.version}</version>
+    	<scope>runtime</scope>
+    </dependency>
+    <dependency>
+    	<groupId>com.vntek</groupId>
+    	<artifactId>services</artifactId>
+    	<version>${vntek.version}</version>
+    	<scope>runtime</scope>
     </dependency>
     
   </dependencies>
@@ -146,5 +154,6 @@
 <!-- 	<org.slf4j.version>1.5.10</org.slf4j.version> -->
   	<tiles.version>2.0.6</tiles.version>
   	<hibernate.version>5.0.1.Final</hibernate.version>
+  	<vntek.version>0.0.1-SNAPSHOT</vntek.version>
   </properties>
 </project>

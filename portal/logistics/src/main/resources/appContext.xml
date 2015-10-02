@@ -46,15 +46,15 @@
 	    </bean>
  		
  		        
-        <bean id="usersPersistence" class="com.afree.logistics.service.persistence.impl.UsersPersistenceImpl">
+        <bean id="usersPersistence" class="com.vntek.logistics.service.persistence.impl.UsersPersistenceImpl">
         	<property name="sessionFactory" ref="sessionFactory" />
         </bean>
  
-	    <bean id="usersService" class="com.afree.logistics.service.impl.UsersServiceImpl">
+	    <bean id="usersService" class="com.vntek.logistics.service.impl.UsersServiceImpl">
 	        <property name="usersPersistence" ref="usersPersistence" />
 	    </bean>
 
- 		<bean name="createAccount" class="com.afree.logistics.action.CreateAccountAction" scope="prototype">
+ 		<bean name="createAccount" class="com.vntek.logistics.action.CreateAccountAction" scope="prototype">
 	     <property name="usersService">
 	        <ref bean="usersService"/>
 	     </property>

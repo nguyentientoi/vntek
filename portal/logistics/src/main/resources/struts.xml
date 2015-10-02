@@ -16,13 +16,13 @@
 		<action name="Login">
 			<result>html/jsp/page/login/login.jsp</result>
 		</action>
-		<action name="Welcome" class="com.afree.logistics.action.WelcomeUserAction" method="execute">
+		<action name="Welcome" class="com.vntek.logistics.action.WelcomeAction" method="execute">
 			<result name="SUCCESS" type="tiles">/welcome.tiles</result>
 		</action>
-		<action name="Register" class="com.afree.logistics.action.WelcomeUserAction" method="register">
+		<action name="Register" class="com.vntek.logistics.action.WelcomeAction" method="register">
 			<result name="SUCCESS" type="tiles">createAccount.tiles</result>
 		</action>
-		<action name="CreateAccount" class="con.afree.logistics.action.CreateAccountAction" method="create">
+		<action name="CreateAccount" class="con.vntek.logistics.action.CreateAccountAction" method="create">
 			<result name="SUCCESS" type="tiles">login.tiles</result>
 		</action>
 	</package>
