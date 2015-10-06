@@ -4,6 +4,7 @@
 package com.vntek.core.service.persistence.impl;
 
 import java.sql.Connection;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -40,6 +41,15 @@ public class BasePersistenceImpl<T extends BaseModel<T>> implements BasePersiste
 	 * 
 	 */
 	private static final long serialVersionUID = -2350403366602641728L;
+
+	public List<T> findAll(Class clazz) throws HibernateException {
+		try {
+			return null;
+		} catch (HibernateException ex) {
+			_log.error(ex.getMessage(), ex);
+			return null;
+		}
+	}
 
 	public Reference getReference() throws NamingException {
 		return sessionFactory.getReference();

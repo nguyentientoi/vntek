@@ -3,6 +3,10 @@
  */
 package com.vntek.core.service.persistence;
 
+import java.util.List;
+
+import org.hibernate.HibernateException;
+
 import com.vntek.core.exception.SystemException;
 import com.vntek.core.model.BaseModel;
 
@@ -23,4 +27,6 @@ public interface BasePersistence<T extends BaseModel<T>> {
 	public T get(String entityName, T id) throws SystemException;
 
 	public T get(Class<T> clazz, T id);
+
+	public List<T> findAll(Class clazz) throws HibernateException;
 }
