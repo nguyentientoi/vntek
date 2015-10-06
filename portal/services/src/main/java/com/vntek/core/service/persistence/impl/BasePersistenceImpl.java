@@ -6,11 +6,12 @@ package com.vntek.core.service.persistence.impl;
 import java.sql.Connection;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Logger;
 
 import javax.naming.NamingException;
 import javax.naming.Reference;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.hibernate.Cache;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -162,6 +163,9 @@ public class BasePersistenceImpl<T extends BaseModel<T>> implements BasePersiste
 
 	private SessionFactory sessionFactory;
 
-	private static final Logger _log = Logger.getLogger(BasePersistenceImpl.class.getName());
+	/**
+	 * log to server
+	 */
+	private static final Log _log = LogFactory.getLog(BasePersistenceImpl.class.getName());
 
 }
