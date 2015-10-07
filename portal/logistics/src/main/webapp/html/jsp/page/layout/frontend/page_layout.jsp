@@ -18,35 +18,33 @@
 		<title><tiles:insertAttribute name="title" ignore="true" /></title>
 		
 		<!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-	    <link href="${contextPath}/html/css/bootstrap.css" rel="stylesheet">
+	    <link href="${contextPath}/html/share/css/bootstrap.css" rel="stylesheet">
 	
 	    <!-- Custom CSS -->
-	    <link href="${contextPath}/html/css/freelancer.css" rel="stylesheet">
+	    <link href="${contextPath}/html/share/css/freelancer.css" rel="stylesheet">
 	
 	    <!-- Custom Fonts -->
-	    <link href="${contextPath}/html/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-	    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-		
+	    <link href="${contextPath}/html/share/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	     <link href="${contextPath}/html/share/css/custom-font.css" rel="stylesheet" type="text/css">
 		
 		<!-- jQuery -->
-	    <script src="${contextPath}/html/js/jquery-1.11.3.min.js"></script>
-	    <script src="${contextPath}/html/js/jquery-ui.min.js"></script>
+	    <script src="${contextPath}/html/share/js/jquery-1.11.3.min.js"></script>
+	    <script src="${contextPath}/html/share/js/jquery-ui.min.js"></script>
 	
 	    <!-- Bootstrap Core JavaScript -->
-	    <script src="${contextPath}/html/js/bootstrap.min.js"></script>
+	    <script src="${contextPath}/html/share/js/bootstrap.min.js"></script>
 	
 	    <!-- Plugin JavaScript -->
-	    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-	    <script src="${contextPath}/html/js/classie.js"></script>
-	    <script src="${contextPath}/html/js/cbpAnimatedHeader.js"></script>
+	    <script src="${contextPath}/html/share/js/jquery.easing.min.js"></script>
+	    <script src="${contextPath}/html/share/js/classie.js"></script>
+	    <script src="${contextPath}/html/share/js/cbpAnimatedHeader.js"></script>
 	
 	    <!-- Contact Form JavaScript -->
-	    <script src="${contextPath}/html/js/jqBootstrapValidation.js"></script>
-	    <script src="${contextPath}/html/js/contact_me.js"></script>
+	    <script src="${contextPath}/html/share/js/jqBootstrapValidation.js"></script>
+	    <script src="${contextPath}/html/share/js/contact_me.js"></script>
 	
 	    <!-- Custom Theme JavaScript -->
-	    <script src="${contextPath}/html/js/freelancer.js"></script>
+	    <script src="${contextPath}/html/share/js/freelancer.js"></script>
 		
 	</head>
 	<body id="page-top" class="index">

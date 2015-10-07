@@ -22,7 +22,7 @@
 		<action name="Register" class="com.vntek.logistics.action.WelcomeAction" method="register">
 			<result name="SUCCESS" type="tiles">createAccount.tiles</result>
 		</action>
-		<action name="CreateAccount" class="con.vntek.logistics.action.CreateAccountAction" method="create">
+		<action name="CreateAccount" class="com.vntek.logistics.action.CreateAccountAction" method="create">
 			<result name="SUCCESS" type="tiles">login.tiles</result>
 		</action>
 	</package>

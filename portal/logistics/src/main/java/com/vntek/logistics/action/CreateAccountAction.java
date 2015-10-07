@@ -49,6 +49,10 @@ public class CreateAccountAction extends ProcessAction {
 			usersService.addNew(crEmail, crPassword1, crFirstName, crLastName,
 					DateTimeUtil.toDate(crBirthDay, StringPool.PATTERN_DATE_VI), crAddress, crEmail, crPhone, crFax, 0,
 					new Date());
+			// HttpServletRequest request =
+			// ServletActionContext.getRequest().getSession().getAttribute("");
+			// HttpServletResponse response =
+			// ServletActionContext.getResponse();
 		} catch (SystemException e) {
 			_log.log(Level.SEVERE, e.getMessage(), e);
 		}

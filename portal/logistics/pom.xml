@@ -5,14 +5,14 @@
   <parent>
     <groupId>com.vntek</groupId>
     <artifactId>portal</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
-  <groupId>com.vntek</groupId>
+  
+<!--   <groupId>com.vntek</groupId> -->
   <artifactId>logistics</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>war</packaging>
-  <name>logistics Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -21,7 +21,60 @@
       <scope>test</scope>
     </dependency>
     
+    <!-- Spring Security Managed Dependencies -->
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-cas</artifactId>
+        <version>${spring.security.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-core</artifactId>
+        <version>${spring.security.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>${spring.security.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-config</artifactId>
+        <version>${spring.security.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+    
     <!-- spring framework -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aspects</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
     <dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-context</artifactId>
@@ -35,13 +88,107 @@
 	</dependency>
 	 
 	<dependency>
-	    <groupId>org.springframework</groupId>
-	    <artifactId>spring-orm</artifactId>
-	    <version>${spring.version}</version>
-	    <type>jar</type>
-	    <scope>compile</scope>
-	</dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${spring.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+<!--       <dependency> -->
+<!--         <groupId>org.springframework</groupId> -->
+<!--         <artifactId>spring-instrument</artifactId> -->
+<!--         <version>${spring.version}</version> -->
+<!--       </dependency> -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+<!--       <dependency> -->
+<!--         <groupId>org.springframework</groupId> -->
+<!--         <artifactId>spring-jms</artifactId> -->
+<!--         <version>${spring.version}</version> -->
+<!--       </dependency> -->
+<!--       <dependency> -->
+<!--         <groupId>org.springframework</groupId> -->
+<!--         <artifactId>spring-orm</artifactId> -->
+<!--         <version>${spring.version}</version> -->
+<!--       </dependency> -->
+<!--       <dependency> -->
+<!--         <groupId>org.springframework</groupId> -->
+<!--         <artifactId>spring-oxm</artifactId> -->
+<!--         <version>${spring.version}</version> -->
+<!--       </dependency> -->
+
+<!--       <dependency> -->
+<!--         <groupId>org.springframework</groupId> -->
+<!--         <artifactId>spring-test</artifactId> -->
+<!--         <version>${spring.version}</version> -->
+<!--         <scope>test</scope> -->
+<!--       </dependency> -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-expression</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.webflow</groupId>
+        <artifactId>spring-webflow</artifactId>
+        <version>${spring.webflow.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      
     <!-- end spring framework -->
+    
+<!--     <dependency> -->
+<!--         <groupId>javax.servlet</groupId> -->
+<!--         <artifactId>servlet-api</artifactId> -->
+<!--         <version>${servlet.api.version}</version> -->
+<!--       </dependency> -->
+
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>${aspectj.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId>
+        <version>${aspectj.version}</version>
+      </dependency>
     
     <!-- struts framework -->
     <dependency>
@@ -116,37 +263,65 @@
     	<groupId>com.vntek</groupId>
     	<artifactId>core</artifactId>
     	<version>${vntek.version}</version>
-    	<scope>runtime</scope>
+    	<scope>compile</scope>
     </dependency>
     <dependency>
     	<groupId>com.vntek</groupId>
     	<artifactId>utils</artifactId>
     	<version>${vntek.version}</version>
-    	<scope>runtime</scope>
+    	<scope>compile</scope>
     </dependency>
     <dependency>
     	<groupId>com.vntek</groupId>
     	<artifactId>services</artifactId>
     	<version>${vntek.version}</version>
-    	<scope>runtime</scope>
+    	<scope>compile</scope>
     </dependency>
     
   </dependencies>
   
-  <build>
-    <finalName>logistics</finalName>
-    <plugins>
-		<plugin>
-			<artifactId>maven-compiler-plugin</artifactId>
-			<version>2.3.2</version>
-			<configuration>
-				<source>1.6</source>
-				<target>1.6</target>
-			</configuration>
-		</plugin>
-	</plugins>
-  </build>
+<!--   <build> -->
+<!--     <finalName>logistics</finalName> -->
+<!--     <plugins> -->
+<!-- 		<plugin> -->
+<!-- 			<artifactId>maven-compiler-plugin</artifactId> -->
+<!-- 			<version>2.3.2</version> -->
+<!-- 			<configuration> -->
+<!-- 				<source>1.6</source> -->
+<!-- 				<target>1.6</target> -->
+<!-- 			</configuration> -->
+<!-- 		</plugin> -->
+<!-- 	</plugins> -->
+<!--   </build> -->
+
+	<build>
+	    <plugins>
+	      <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-war-plugin</artifactId>
+	        <configuration>
+	          <warName>logistics</warName>
+	          <webResources>
+	            <resource>
+	              <directory>${basedir}/src/main/webapp/WEB-INF</directory>
+	              <filtering>true</filtering>
+	              <targetPath>WEB-INF</targetPath>
+	              <includes>
+	                <include>**/web.xml</include>
+	              </includes>
+	            </resource>
+	          </webResources>
+	        </configuration>
+	      </plugin>
+	    </plugins>
+  	</build>
+
   <properties>
+  	<servlet.api.version>2.5</servlet.api.version>
+  	<aspectj.version>1.7.2</aspectj.version>
+  	<ldaptive.version>1.0.3</ldaptive.version>
+  	<spring.webflow.version>2.3.2.RELEASE</spring.webflow.version>
+  	<spring.security.version>3.2.0.RELEASE</spring.security.version>
   	<spring.version>4.2.1.RELEASE</spring.version>
   	<struts.version>2.3.24</struts.version>
   	<jstl.version>1.2</jstl.version>
@@ -154,6 +329,6 @@
 <!-- 	<org.slf4j.version>1.5.10</org.slf4j.version> -->
   	<tiles.version>2.0.6</tiles.version>
   	<hibernate.version>5.0.1.Final</hibernate.version>
-  	<vntek.version>0.0.1-SNAPSHOT</vntek.version>
+  	<vntek.version>1.0.0</vntek.version>
   </properties>
 </project>
