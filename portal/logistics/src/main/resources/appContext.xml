@@ -54,7 +54,7 @@
 	        <property name="usersPersistence" ref="usersPersistence" />
 	    </bean>
 
- 		<bean name="createAccount" class="com.vntek.logistics.action.CreateAccountAction" scope="prototype">
+ 		<bean name="createAccount" class="com.vntek.logistics.service.util.UsersServiceUtil" scope="prototype">
 	     <property name="usersService">
 	        <ref bean="usersService"/>
 	     </property>
