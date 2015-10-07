@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<!-- HOME PAGE LAYOUT -->
+	<definition name="baseLayout" template="/html/jsp/page/layout/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/html/jsp/page/layout/header.jsp" />
+		<put-attribute name="nav" value="/html/jsp/page/layout/navigation.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/html/jsp/page/layout/footer.jsp" />
+	</definition>
+	
+	<!-- BEGIN PAGE DEFINITION -->
+	<definition name="/welcome.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Xin chào" />
+		<put-attribute name="body" value="/html/jsp/page/index.jsp" />
+	</definition>
+	
+	<definition name="createAccount.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Tạo tài khoản" />
+		<put-attribute name="body" value="/html/jsp/page/register/create_account.jsp" />
+	</definition>
+	
+	<definition name="login.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Đăng nhập" />
+		<put-attribute name="body" value="/html/jsp/page/login/login.jsp" />
+	</definition>
+</tiles-definitions>

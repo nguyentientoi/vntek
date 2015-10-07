@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.vntek</groupId>
+    <artifactId>portal</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>system</artifactId>
+  <version>1.0.0</version>
+  <packaging>war</packaging>
+  <name>System Webapp</name>
+  
+  <build>
+	    <plugins>
+	      <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-war-plugin</artifactId>
+	        <configuration>
+	          <warName>vntek-system-1.0.0</warName>
+	          <webResources>
+	            <resource>
+	              <directory>${basedir}/src/main/webapp/WEB-INF</directory>
+	              <filtering>true</filtering>
+	              <targetPath>WEB-INF</targetPath>
+	              <includes>
+	                <include>**/web.xml</include>
+	              </includes>
+	            </resource>
+	          </webResources>
+	        </configuration>
+	      </plugin>
+	    </plugins>
+  	</build>
+</project>

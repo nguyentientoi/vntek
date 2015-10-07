@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+ 		<!-- Configure jdbc.properties -->
+	    <bean id="propertyConfigurer"
+	        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+	        p:location="/WEB-INF/jdbc.properties" />
+	 
+	    <!-- Data Source configuration -->
+	    <bean id="dataSource"
+	        class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close"
+	        p:driverClassName="${jdbc.driverClassName}"
+	        p:url="${jdbc.databaseurl}" p:username="${jdbc.username}"
+	        p:password="${jdbc.password}" />
+	 
+		<!-- Configure hibernate session factory -->    
+	    <bean id="sessionFactory"
+	        class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+	        <property name="dataSource" ref="dataSource" />
+	        <property name="configLocation">
+	            <value>classpath:hibernate.cfg.xml</value>
+	        </property>
+<!-- 	        <property name="configurationClass"> -->
+<!-- 	            <value>org.hibernate.cfg.AnnotationConfiguration</value> -->
+<!-- 	        </property> -->
+	        <property name="hibernateProperties">
+	            <props>
+	                <prop key="hibernate.dialect">${jdbc.dialect}</prop>
+	                <prop key="hibernate.show_sql">true</prop>
+	            </props>
+	        </property>
+	    </bean>
+	    <!-- Run SQL queries in transactions -->
+	    <tx:annotation-driven />
+	    <bean id="transactionManager"
+	        class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+	        <property name="sessionFactory" ref="sessionFactory" />
+	    </bean>
+ 		
+ 		        
+        <bean id="usersPersistence" class="com.vntek.logistics.service.persistence.impl.UsersPersistenceImpl">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+ 
+	    <bean id="usersService" class="com.vntek.logistics.service.impl.UsersServiceImpl">
+	        <property name="usersPersistence" ref="usersPersistence" />
+	    </bean>
+
+ 		<bean name="createAccount" class="com.vntek.logistics.service.util.UsersServiceUtil" scope="prototype">
+	     <property name="usersService">
+	        <ref bean="usersService"/>
+	     </property>
+    </bean>
+ 		
+</beans>
